@@ -10,8 +10,8 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="container max-w-[1100px] mx-auto">
-      <div className="justify-between bg-[#ffffff] flex  text-center items-center mb-[100px] ">
+    <main className="container max-w-[1400px] mx-auto ">
+      <div className="justify-between bg-[#ffffff] flex  text-center items-center mb-[100px] pt-4 pb-4 pr-20 pl-20 ">
         <div className="text-[#111827] text-3xl ">SS</div>
         <div className="flex">
           <div className="text-[#4B5563] text-[16px]  gap-6 mr-[48px] hidden md:flex">
@@ -33,7 +33,7 @@ export default function Home() {
           <IoMdMenu className="h-6 w-6" />
         </button>
       </div>
-      <div className=" mt-[120px] flex flex-col-reverse md:flex-row  gap-[48px] mb-[100px]">
+      <div className=" mt-[120px] flex flex-col-reverse md:flex-row  gap-[48px] mb-[100px] justify-between pr-20 pl-20">
         <div>
           <div>
             <div className="text-[#111827] text-[60px]">Hi, I’m Sagar 👋</div>
@@ -74,9 +74,11 @@ export default function Home() {
             About me
           </div>
         </div>
-        <div className="mt-[48px] flex pr-8 pl-8">
-          <div className="flex-1">
-            <Image src="/pic2.png" width={400} height={480} />
+        <div className="mt-[48px] flex flex-col md:flex-row pr-20 pl-20 pb-24">
+          <div className="flex-1 flex justify-center md:block">
+            <div>
+              <Image src="/pic2.png" width={400} height={480} />
+            </div>
           </div>
           <div className="flex-1">
             <div className="text-[30px] text-[#111827]">
@@ -127,6 +129,157 @@ export default function Home() {
                 to reach out and say hello! I promise I don't bite 😉
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+      <div className="bg-white pr-20 pl-20 pt-24 pb-24">
+        <div className="flex justify-center">
+          <div className="bg-[#E5E7EB] rounded-xl flex  justify-center w-[105px] h-[28px] mt-[96px] text-[14px] text-[#4B5563] items-center">
+            Skills
+          </div>
+        </div>
+        <div className="text-[#4B5563] text-[20px] flex justify-center mt-4">
+          The skills, tools and technologies I am really good at:
+        </div>
+        <div className="grid grid-cols-8 text-[#4B5563] text-[18px] mt-12 text-center justify-center items-center gap-x-21 gap-y-12">
+          <div className="w-[88px] h-[100px] bg-slate-500 ">
+            <Image
+              src="/icons/icon-javscript.png"
+              width={64}
+              height={64}
+              className="mx-auto mb-2"
+            ></Image>
+            <div>Javascript</div>
+          </div>
+          <div className="w-[88px] h-[100px]  ">
+            <Image
+              src="/icons/icon-typescript.png"
+              width={64}
+              height={64}
+              className="mx-auto mb-2"
+            ></Image>
+            <div>Typescript</div>
+          </div>
+          <div className="w-[88px] h-[100px]  ">
+            <Image
+              src="/icons/icon-react.png"
+              width={64}
+              height={64}
+              className="mx-auto mb-2"
+            ></Image>
+            <div>React</div>
+          </div>
+          <div className="w-[88px] h-[100px]  ">
+            <Image
+              src="/icons/icon-nextjs.png"
+              width={64}
+              height={64}
+              className="mx-auto mb-2"
+            ></Image>
+            <div>NextJs</div>
+          </div>
+          <div className="w-[88px] h-[100px]  ">
+            <Image
+              src="/icons/icon-nodejs.png"
+              width={64}
+              height={64}
+              className="mx-auto mb-2"
+            ></Image>
+            <div>NodeJs</div>
+          </div>
+          <div className="w-[88px] h-[100px]  ">
+            <Image
+              src="/icons/icon-express.png"
+              width={64}
+              height={64}
+              className="mx-auto mb-2"
+            ></Image>
+            <div>Express</div>
+          </div>
+          <div className="w-[88px] h-[100px]  ">
+            <Image
+              src="/icons/icon-nest.png"
+              width={64}
+              height={64}
+              className="mx-auto mb-2"
+            ></Image>
+            <div>Nest</div>
+          </div>
+          <div className="w-[88px] h-[100px]  ">
+            <Image
+              src="/icons/icon-socket.png"
+              width={64}
+              height={64}
+              className="mx-auto mb-2"
+            ></Image>
+            <div>Socket</div>
+          </div>
+          <div className="w-[88px] h-[100px]  ">
+            <Image
+              src="/icons/icon-postgresql.png"
+              width={64}
+              height={64}
+              className="mx-auto mb-2"
+            ></Image>
+            <div>PostgreSQL</div>
+          </div>
+          <div className="w-[88px] h-[100px]  ">
+            <Image
+              src="/icons/icon-mongodb.png"
+              width={64}
+              height={64}
+              className="mx-auto mb-2"
+            ></Image>
+            <div>MongoDB</div>
+          </div>
+          <div className="w-[88px] h-[100px]  ">
+            <Image
+              src="/icons/icon-sass.png"
+              width={64}
+              height={64}
+              className="mx-auto mb-2"
+            ></Image>
+            <div>Sass</div>
+          </div>
+          <div className="w-[88px] h-[100px]  ">
+            <Image
+              src="/icons/icon-tailwindcss.png"
+              width={64}
+              height={64}
+              className="mx-auto mb-2"
+            ></Image>
+            <div>Tailwindcss</div>
+          </div>
+          <div className="w-[88px] h-[100px] bg-slate-300  ">
+            <Image
+              src="/icons/icon-figma.png"
+              width={64}
+              height={64}
+              className="mx-auto mb-2"
+            ></Image>
+            <div>Figma</div>
+          </div>
+          <div className="w-[88px] h-[100px]  ">
+            <img src="/icons/icon-cypress.png" className="mx-auto mb-2"></img>
+            <div>Cypress</div>
+          </div>
+          <div className="w-[88px] h-[100px]  ">
+            <Image
+              src="/icons/icon-storybook.png"
+              width={64}
+              height={64}
+              className="mx-auto mb-2"
+            ></Image>
+            <div>Storybook</div>
+          </div>
+          <div className="w-[88px] h-[100px]  ">
+            <Image
+              src="/icons/icon-git.png"
+              width={64}
+              height={64}
+              className="mx-auto mb-2"
+            ></Image>
+            <div>Git</div>
           </div>
         </div>
       </div>
