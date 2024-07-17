@@ -64,9 +64,12 @@ export default function Home() {
             <FaFigma className="h-6 w-6" />
           </div>
         </div>
+        <div>
         <div className="flex justify-center">
           <Image src="/pic.png" width={280} height={320} />
         </div>
+        </div>
+       
       </div>
       <div className="bg-[#F9FAFB]">
         <div className="flex justify-center">
@@ -141,13 +144,13 @@ export default function Home() {
         <div className="text-[#4B5563] text-[20px] flex justify-center mt-4">
           The skills, tools and technologies I am really good at:
         </div>
-        <div className="grid grid-cols-8 text-[#4B5563] text-[18px] mt-12 text-center justify-center items-center gap-x-21 gap-y-12">
-          <div className="w-[88px] h-[100px] bg-slate-500 ">
+        <div className="grid grid-cols-3 text-[#4B5563] text-[18px] mt-12 text-center justify-center items-center gap-x-21 gap-y-12 md:grid md:grid-cols-8">
+          <div className="w-[88px] h-[100px]">
             <Image
               src="/icons/icon-javscript.png"
               width={64}
               height={64}
-              className="mx-auto mb-2"
+              className="mx-auto mb-2 h-16"
             ></Image>
             <div>Javascript</div>
           </div>
@@ -156,7 +159,7 @@ export default function Home() {
               src="/icons/icon-typescript.png"
               width={64}
               height={64}
-              className="mx-auto mb-2"
+              className="mx-auto mb-2 h-16"
             ></Image>
             <div>Typescript</div>
           </div>
@@ -165,7 +168,7 @@ export default function Home() {
               src="/icons/icon-react.png"
               width={64}
               height={64}
-              className="mx-auto mb-2"
+              className="mx-auto mb-2 h-16"
             ></Image>
             <div>React</div>
           </div>
@@ -174,7 +177,7 @@ export default function Home() {
               src="/icons/icon-nextjs.png"
               width={64}
               height={64}
-              className="mx-auto mb-2"
+              className="mx-auto mb-2 h-16"
             ></Image>
             <div>NextJs</div>
           </div>
@@ -183,7 +186,7 @@ export default function Home() {
               src="/icons/icon-nodejs.png"
               width={64}
               height={64}
-              className="mx-auto mb-2"
+              className="mx-auto mb-2 h-16"
             ></Image>
             <div>NodeJs</div>
           </div>
@@ -192,7 +195,7 @@ export default function Home() {
               src="/icons/icon-express.png"
               width={64}
               height={64}
-              className="mx-auto mb-2"
+              className="mx-auto mb-2 h-16"
             ></Image>
             <div>Express</div>
           </div>
@@ -201,7 +204,7 @@ export default function Home() {
               src="/icons/icon-nest.png"
               width={64}
               height={64}
-              className="mx-auto mb-2"
+              className="mx-auto mb-2 h-16"
             ></Image>
             <div>Nest</div>
           </div>
@@ -210,7 +213,7 @@ export default function Home() {
               src="/icons/icon-socket.png"
               width={64}
               height={64}
-              className="mx-auto mb-2"
+              className="mx-auto mb-2 h-16"
             ></Image>
             <div>Socket</div>
           </div>
@@ -219,7 +222,7 @@ export default function Home() {
               src="/icons/icon-postgresql.png"
               width={64}
               height={64}
-              className="mx-auto mb-2"
+              className="mx-auto mb-2 h-16"
             ></Image>
             <div>PostgreSQL</div>
           </div>
@@ -228,7 +231,7 @@ export default function Home() {
               src="/icons/icon-mongodb.png"
               width={64}
               height={64}
-              className="mx-auto mb-2"
+              className="mx-auto mb-2 w-[30px] h-[64px]"
             ></Image>
             <div>MongoDB</div>
           </div>
@@ -246,16 +249,16 @@ export default function Home() {
               src="/icons/icon-tailwindcss.png"
               width={64}
               height={64}
-              className="mx-auto mb-2"
+              className="mx-auto mb-2 h-16 w-[104px]"
             ></Image>
             <div>Tailwindcss</div>
           </div>
-          <div className="w-[88px] h-[100px] bg-slate-300  ">
+          <div className="w-[88px] h-[100px]">
             <Image
               src="/icons/icon-figma.png"
               width={64}
               height={64}
-              className="mx-auto mb-2"
+              className="mx-auto mb-2 w-[43px] h-16"
             ></Image>
             <div>Figma</div>
           </div>
@@ -282,6 +285,16 @@ export default function Home() {
             <div>Git</div>
           </div>
         </div>
+      </div>
+      <div className="pt-24 pb-24 pr-20 pl-20 bg-[#F9FAFB]">
+        <div className="flex justify-center">
+          <div className="bg-[#E5E7EB] rounded-xl flex  justify-center w-[105px] h-[28px] mt-[96px] text-[14px] text-[#4B5563] items-center">
+            Experience
+          </div>
+        </div>
+        <div className="text-[#4B5563] text-xl flex justify-center mt-4">
+          Here is a quick summary of my most recent experiences:
+          </div>
       </div>
     </main>
   );
