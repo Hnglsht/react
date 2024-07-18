@@ -7,18 +7,153 @@ import { LuGithub } from "react-icons/lu";
 import { FiTwitter } from "react-icons/fi";
 import { FaFigma } from "react-icons/fa6";
 import Image from "next/image";
+import Link from "next/link";
 
+const navigation = [
+  {
+    name: "About",
+    link: "/About",
+  },
+  {
+    name: "Work",
+    link: "/work",
+  },
+  {
+    name: "Testimonials",
+    link: "/work",
+  },
+  {
+    name: "Contact",
+    link: "/contact",
+  },
+];
+
+const skills = [
+  {
+    name: "Javascript",
+    Imagepath: "/icons/icon-javscript.png",
+  },
+  {
+    name: "Typescript",
+    Imagepath: "/icons/icon-typescript.png",
+  },
+  {
+    name: "React",
+    Imagepath: "/icons/icon-react.png",
+  },
+  {
+    name: "Nextjs",
+    Imagepath: "/icons/icon-nextjs.png",
+  },
+  {
+    name: "NodeJs",
+    Imagepath: "/icons/icon-nodejs.png",
+  },
+  {
+    name: "Express",
+    Imagepath: "/icons/icon-express.png",
+  },
+  {
+    name: "Nest",
+    Imagepath: "/icons/icon-nest.png",
+  },
+  {
+    name: "Socket",
+    Imagepath: "/icons/icon-socket.png",
+  },
+  {
+    name: "PostgreSql",
+    Imagepath: "/icons/icon-postgresql.png",
+  },
+  {
+    name: "MongoDB",
+    Imagepath: "/icons/icon-mongodb.png",
+  },
+  {
+    name: "Sass",
+    Imagepath: "/icons/icon-sass.png",
+  },
+  {
+    name: "Tailwindcss",
+    Imagepath: "/icons/icon-tailwindcss.png",
+  },
+  {
+    name: "Figma",
+    Imagepath: "/icons/icon-figma.png",
+  },
+  {
+    name: "Cypress",
+    Imagepath: "/icons/icon-cypress.png",
+  },
+  {
+    name: "Storybook",
+    Imagepath: "/icons/icon-storybook.png",
+  },
+  {
+    name: "Git",
+    Imagepath: "/icons/icon-git.png",
+  },
+];
+const experiences = [
+  {
+    Logopath: "/icons/upwork.png",
+    experienceTitle: "Sr. Frontend Developer",
+    details: 
+      <ul className="list-disc list-inside">
+        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+        <li>Ut pretium arcu et massa semper, id fringilla leo semper.</li>
+        <li>Sed quis justo ac magna.</li>
+        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+      </ul>
+    ,
+    date: "Nov 2021 - Present",
+  },
+  {
+    Logopath: "/icons/upwork.png",
+    experienceTitle: "Team Lead",
+    details: 
+      <ul className="list-disc list-inside">
+        <li>Sed quis justo ac magna.</li>
+        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+        <li>Sed quis justo ac magna.</li>
+        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+      </ul>
+    ,
+    date: "Jul 2017 - Oct 2021",
+  },
+  {
+    Logopath: "/icons/upwork.png",
+    experienceTitle: "Full Stack Developer",
+    details: 
+      <ul className="list-disc list-inside">
+        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+      </ul>
+    ,
+    date: "Dec 2015 - May 2017",
+  },
+];
 export default function Home() {
   return (
     <main className="container max-w-[1400px] mx-auto ">
       <div className="justify-between bg-[#ffffff] flex  text-center items-center mb-[100px] pt-4 pb-4 pr-20 pl-20 ">
         <div className="text-[#111827] text-3xl ">SS</div>
         <div className="flex">
-          <div className="text-[#4B5563] text-[16px]  gap-6 mr-[48px] hidden md:flex">
+          {/* <div className="text-[#4B5563] text-[16px]  gap-6 mr-[48px] hidden md:flex">
             <span>About</span>
             <span>Work</span>
             <span>Testimonials</span>
             <span>Contact</span>
+          </div> */}
+          <div className=" gap-6 mr-12 hidden md:flex ">
+            {navigation.map((nav) => (
+              <Link
+                key={nav.link}
+                href={nav.link}
+                className="text-[#4B5563] text-[16px]"
+              >
+                {nav.name}{" "}
+              </Link>
+            ))}
           </div>
           <div className=" gap-4 items-center hidden md:flex">
             <button>
@@ -65,11 +200,10 @@ export default function Home() {
           </div>
         </div>
         <div>
-        <div className="flex justify-center">
-          <Image src="/pic.png" width={280} height={320} />
+          <div className="flex justify-center">
+            <Image src="/pic.png" width={280} height={320} />
+          </div>
         </div>
-        </div>
-       
       </div>
       <div className="bg-[#F9FAFB]">
         <div className="flex justify-center">
@@ -144,146 +278,22 @@ export default function Home() {
         <div className="text-[#4B5563] text-[20px] flex justify-center mt-4">
           The skills, tools and technologies I am really good at:
         </div>
-        <div className="grid grid-cols-3 text-[#4B5563] text-[18px] mt-12 text-center justify-center items-center gap-x-21 gap-y-12 md:grid md:grid-cols-8">
-          <div className="w-[88px] h-[100px]">
-            <Image
-              src="/icons/icon-javscript.png"
-              width={64}
-              height={64}
-              className="mx-auto mb-2 h-16"
-            ></Image>
-            <div>Javascript</div>
-          </div>
-          <div className="w-[88px] h-[100px]  ">
-            <Image
-              src="/icons/icon-typescript.png"
-              width={64}
-              height={64}
-              className="mx-auto mb-2 h-16"
-            ></Image>
-            <div>Typescript</div>
-          </div>
-          <div className="w-[88px] h-[100px]  ">
-            <Image
-              src="/icons/icon-react.png"
-              width={64}
-              height={64}
-              className="mx-auto mb-2 h-16"
-            ></Image>
-            <div>React</div>
-          </div>
-          <div className="w-[88px] h-[100px]  ">
-            <Image
-              src="/icons/icon-nextjs.png"
-              width={64}
-              height={64}
-              className="mx-auto mb-2 h-16"
-            ></Image>
-            <div>NextJs</div>
-          </div>
-          <div className="w-[88px] h-[100px]  ">
-            <Image
-              src="/icons/icon-nodejs.png"
-              width={64}
-              height={64}
-              className="mx-auto mb-2 h-16"
-            ></Image>
-            <div>NodeJs</div>
-          </div>
-          <div className="w-[88px] h-[100px]  ">
-            <Image
-              src="/icons/icon-express.png"
-              width={64}
-              height={64}
-              className="mx-auto mb-2 h-16"
-            ></Image>
-            <div>Express</div>
-          </div>
-          <div className="w-[88px] h-[100px]  ">
-            <Image
-              src="/icons/icon-nest.png"
-              width={64}
-              height={64}
-              className="mx-auto mb-2 h-16"
-            ></Image>
-            <div>Nest</div>
-          </div>
-          <div className="w-[88px] h-[100px]  ">
-            <Image
-              src="/icons/icon-socket.png"
-              width={64}
-              height={64}
-              className="mx-auto mb-2 h-16"
-            ></Image>
-            <div>Socket</div>
-          </div>
-          <div className="w-[88px] h-[100px]  ">
-            <Image
-              src="/icons/icon-postgresql.png"
-              width={64}
-              height={64}
-              className="mx-auto mb-2 h-16"
-            ></Image>
-            <div>PostgreSQL</div>
-          </div>
-          <div className="w-[88px] h-[100px]  ">
-            <Image
-              src="/icons/icon-mongodb.png"
-              width={64}
-              height={64}
-              className="mx-auto mb-2 w-[30px] h-[64px]"
-            ></Image>
-            <div>MongoDB</div>
-          </div>
-          <div className="w-[88px] h-[100px]  ">
-            <Image
-              src="/icons/icon-sass.png"
-              width={64}
-              height={64}
-              className="mx-auto mb-2"
-            ></Image>
-            <div>Sass</div>
-          </div>
-          <div className="w-[88px] h-[100px]  ">
-            <Image
-              src="/icons/icon-tailwindcss.png"
-              width={64}
-              height={64}
-              className="mx-auto mb-2 h-16 w-[104px]"
-            ></Image>
-            <div>Tailwindcss</div>
-          </div>
-          <div className="w-[88px] h-[100px]">
-            <Image
-              src="/icons/icon-figma.png"
-              width={64}
-              height={64}
-              className="mx-auto mb-2 w-[43px] h-16"
-            ></Image>
-            <div>Figma</div>
-          </div>
-          <div className="w-[88px] h-[100px]  ">
-            <img src="/icons/icon-cypress.png" className="mx-auto mb-2"></img>
-            <div>Cypress</div>
-          </div>
-          <div className="w-[88px] h-[100px]  ">
-            <Image
-              src="/icons/icon-storybook.png"
-              width={64}
-              height={64}
-              className="mx-auto mb-2"
-            ></Image>
-            <div>Storybook</div>
-          </div>
-          <div className="w-[88px] h-[100px]  ">
-            <Image
-              src="/icons/icon-git.png"
-              width={64}
-              height={64}
-              className="mx-auto mb-2"
-            ></Image>
-            <div>Git</div>
-          </div>
+
+        <div className="grid grid-cols-3 text-[#4B5563] text-[18px] mt-12  gap-x-21 gap-y-12 md:grid md:grid-cols-8">
+          {skills.map((skill) => (
+            <div
+              key={skill.name}
+              className="w-22 h-25 flex flex-col text-center justify-center items-center"
+            >
+              <Image
+                src={skill.Imagepath}
+                width={88}
+                height={100}
+                className="w-16 h-16"
+              />
+              {skill.name}
+            </div>
+          ))}
         </div>
       </div>
       <div className="pt-24 pb-24 pr-20 pl-20 bg-[#F9FAFB]">
@@ -294,7 +304,39 @@ export default function Home() {
         </div>
         <div className="text-[#4B5563] text-xl flex justify-center mt-4">
           Here is a quick summary of my most recent experiences:
+        </div>
+        <div className="mt-12 pr-48 pl-48">
+          {experiences.map((experiences) => (
+            <div className="flex-row md:flex p-8 gap-12 mb-12 bg-white m-auto">
+              
+              <div className="flex-none">
+                
+                <Image
+                  src={experiences.Logopath}
+                  width={102}
+                  height={28}
+                  className="mr-[150px]"
+                />
+              </div>
+              <div className="flex-auto">
+                
+                <div className="text-[#111827] text-xl font-semibold">{experiences.experienceTitle}</div>
+                <div className="mt-4 text-[#4B5563] text-[16px]">{experiences.details}</div>
+              </div>
+              <div className="flex-none  text-[16px] text-[#374151]">{experiences.date}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div>
+      <div className="flex justify-center">
+          <div className="bg-[#E5E7EB] rounded-xl flex  justify-center w-[105px] h-[28px] mt-[96px] text-[14px] text-[#4B5563] items-center">
+            Work
           </div>
+      </div>
+      <div className="text-[#4B5563] text-xl flex justify-center mt-4">
+      Some of the noteworthy projects I have built:
+        </div>
       </div>
     </main>
   );
