@@ -8,6 +8,11 @@ import { FiTwitter } from "react-icons/fi";
 import { FaFigma } from "react-icons/fa6";
 import Image from "next/image";
 import Link from "next/link";
+import { Work, Works, Tag } from "@/components/Work";
+import { AiOutlineMail } from "react-icons/ai";
+import { PiCopy } from "react-icons/pi";
+import { AiTwotoneCopyright } from "react-icons/ai";
+import { useState } from "react";
 
 const navigation = [
   {
@@ -98,52 +103,68 @@ const experiences = [
   {
     Logopath: "/icons/upwork.png",
     experienceTitle: "Sr. Frontend Developer",
-    details: 
+    details: (
       <ul className="list-disc list-inside">
-        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-        <li>Ut pretium arcu et massa semper, id fringilla leo semper.</li>
+        <li>
+          Lorem ipsum dolor sit amet, consectetur <br /> adipiscing elit.
+        </li>
+        <li>
+          Ut pretium arcu et massa semper, id fringilla leo <br /> semper.
+        </li>
         <li>Sed quis justo ac magna.</li>
-        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+        <li>
+          Lorem ipsum dolor sit amet, consectetur <br /> adipiscing elit.
+        </li>
       </ul>
-    ,
+    ),
     date: "Nov 2021 - Present",
   },
   {
     Logopath: "/icons/upwork.png",
     experienceTitle: "Team Lead",
-    details: 
+    details: (
       <ul className="list-disc list-inside">
         <li>Sed quis justo ac magna.</li>
-        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+        <li>
+          Lorem ipsum dolor sit amet, consectetur <br /> adipiscing elit.
+        </li>
         <li>Sed quis justo ac magna.</li>
-        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+        <li>
+          Lorem ipsum dolor sit amet, consectetur <br /> adipiscing elit.
+        </li>
       </ul>
-    ,
+    ),
     date: "Jul 2017 - Oct 2021",
   },
   {
     Logopath: "/icons/upwork.png",
     experienceTitle: "Full Stack Developer",
-    details: 
+    details: (
       <ul className="list-disc list-inside">
-        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+        <li>
+          Lorem ipsum dolor sit amet, consectetur <br /> adipiscing elit. Lorem
+          ipsum dolor sit amet,
+          <br /> consectetur adipiscing elit.
+        </li>
       </ul>
-    ,
+    ),
     date: "Dec 2015 - May 2017",
   },
 ];
+
 export default function Home() {
+  let [open, setOpen] = useState(true);
+  function openMenu() {
+    setOpen(true);
+  }
+  function closeMenu() {
+    setOpen(false);
+  }
   return (
     <main className="container max-w-[1400px] mx-auto ">
       <div className="justify-between bg-[#ffffff] flex  text-center items-center mb-[100px] pt-4 pb-4 pr-20 pl-20 ">
-        <div className="text-[#111827] text-3xl ">SS</div>
+        <div className="text-[#111827] text-3xl font-semibold ">{"<SS />"}</div>
         <div className="flex">
-          {/* <div className="text-[#4B5563] text-[16px]  gap-6 mr-[48px] hidden md:flex">
-            <span>About</span>
-            <span>Work</span>
-            <span>Testimonials</span>
-            <span>Contact</span>
-          </div> */}
           <div className=" gap-6 mr-12 hidden md:flex ">
             {navigation.map((nav) => (
               <Link
@@ -164,9 +185,35 @@ export default function Home() {
             </button>
           </div>
         </div>
-        <button className="md:hidden">
+        <button className="md:hidden" onClick={openMenu}>
           <IoMdMenu className="h-6 w-6" />
         </button>
+        <div className="md:hidden">
+          <div
+            className={`fixed transition-all inset-0 bg-slate-500/90 ${
+              open ? "block" : "hidden"
+            }`}
+            onClick={closeMenu}
+          ></div>
+          <div
+            className={`fixed top-0 bottom-0  transition-all w-64 text-black bg-white shadow-lg  ${
+              open ? "right-0" : "-right-full"
+            }`}
+          >
+            <div>
+              <div className="flex">
+                <div className="text-[#111827] text-3xl font-semibold ">
+                  {"<SS />"}
+                </div>
+                <div>
+                  <button onClick={closeMenu} className="hidden">
+                    Close
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
       <div className=" mt-[120px] flex flex-col-reverse md:flex-row  gap-[48px] mb-[100px] justify-between pr-20 pl-20">
         <div>
@@ -199,22 +246,38 @@ export default function Home() {
             <FaFigma className="h-6 w-6" />
           </div>
         </div>
-        <div>
-          <div className="flex justify-center">
-            <Image src="/pic.png" width={280} height={320} />
+        <div className="relative gap-4 md:flex md:flex-row-reverse">
+          <div className="px-8 md:w-[320px] max-w-[350px] mx-auto">
+            <div className="bg-[#E5E7EB] w-full aspect-[5/6] relative md:top-[10%] md:left-[10%]">
+              <Image
+                src="/profile.png"
+                width={300}
+                height={300}
+                alt="profile"
+                className="border-white shadow border-8 relative block object-cover w-[90%] md:w-full h-full bottom-[5%] md:bottom-[10%] md:right-[10%] right-[-5%] z-0 "
+              />
+            </div>
           </div>
         </div>
       </div>
       <div className="bg-[#F9FAFB]">
-        <div className="flex justify-center">
-          <div className="bg-[#E5E7EB] rounded-xl flex  justify-center w-[105px] h-[28px] mt-[96px] text-[14px] text-[#4B5563] items-center">
-            About me
+        <div className="flex justify-center ">
+          <div className="mt-24">
+            <Tag name="About me" />
           </div>
         </div>
         <div className="mt-[48px] flex flex-col md:flex-row pr-20 pl-20 pb-24">
-          <div className="flex-1 flex justify-center md:block">
-            <div>
-              <Image src="/pic2.png" width={400} height={480} />
+          <div className="relative  md:flex md:flex-1 mb-10">
+            <div className="px-8 md:w-[480px] max-w-[520px] mx-auto">
+              <div className="bg-[#E5E7EB] w-full aspect-[5/6] relative md:top-[10%] md:left-[-10%] md:flex md:justify-center">
+                <Image
+                  src="/picture2.png"
+                  width={440}
+                  height={440}
+                  alt="profile"
+                  className="border-white shadow border-8 relative block object-cover w-[90%] md:w-full h-full bottom-[5%] md:bottom-[10%] md:left-[10%] right-[-5%] "
+                />
+              </div>
             </div>
           </div>
           <div className="flex-1">
@@ -305,12 +368,10 @@ export default function Home() {
         <div className="text-[#4B5563] text-xl flex justify-center mt-4">
           Here is a quick summary of my most recent experiences:
         </div>
-        <div className="mt-12 pr-48 pl-48">
+        <div className="mt-12 md:max-w-[900px] mx-auto">
           {experiences.map((experiences) => (
-            <div className="flex-row md:flex p-8 gap-12 mb-12 bg-white m-auto">
-              
-              <div className="flex-none">
-                
+            <div className="flex-row md:flex p-8 mb-12 bg-white">
+              <div className="">
                 <Image
                   src={experiences.Logopath}
                   width={102}
@@ -318,25 +379,58 @@ export default function Home() {
                   className="mr-[150px]"
                 />
               </div>
-              <div className="flex-auto">
-                
-                <div className="text-[#111827] text-xl font-semibold">{experiences.experienceTitle}</div>
-                <div className="mt-4 text-[#4B5563] text-[16px]">{experiences.details}</div>
+              <div className="md:w-full md:ml-20">
+                <div className="md:flex md:justify-between md:flex-row-reverse md:mt-0 ">
+                  <div className="text-[16px] mt-4 text-[#374151] md:mt-0">
+                    {experiences.date}
+                  </div>
+                  <div className="font-semibold text-[18px] text-[#374151] mt-4 md:mt-0">
+                    {experiences.experienceTitle}
+                  </div>
+                </div>
+                <div className="mt-4 text-[16px] text-[#4B5563]">
+                  {experiences.details}
+                </div>
               </div>
-              <div className="flex-none  text-[16px] text-[#374151]">{experiences.date}</div>
             </div>
           ))}
         </div>
       </div>
-      <div>
-      <div className="flex justify-center">
-          <div className="bg-[#E5E7EB] rounded-xl flex  justify-center w-[105px] h-[28px] mt-[96px] text-[14px] text-[#4B5563] items-center">
-            Work
-          </div>
-      </div>
-      <div className="text-[#4B5563] text-xl flex justify-center mt-4">
-      Some of the noteworthy projects I have built:
+      <Works />
+      <div className="pt-16 pb-16 pr-4 pl-4 md:pt-24 md:pl-20 md:pr-20 md:pb-24 bg-white">
+        <div className="flex justify-center">
+          <Tag name="Get in touch" />
         </div>
+        <div className="text-center text-xl text-[#4B5563] mt-4 mb-12">
+          What’s next? Feel free to reach out to me if you're looking for
+          <br /> a developer, have a query, or simply want to connect.
+        </div>
+        <div className="font-semibold ">
+          <div className="flex gap-x-5 justify-center text-[18px] md:text-[36px] items-center mb-4">
+            <AiOutlineMail className="w-6 h-6 md:w-8 md:h-8" />
+            reachsagarshah@gmail.com
+            <PiCopy className="w-6  md:w-8 md:h-8 h-6" />
+          </div>
+          <div>
+            <div className="flex gap-x-5 justify-center text-[18px] md:text-[36px] items-center">
+              <AiOutlineMail className="w-6 h-6 md:w-8 md:h-8" />
+              +91 8980500565
+              <PiCopy className="w-6  md:w-8 md:h-8 h-6" />
+            </div>
+          </div>
+        </div>
+        <div className="mt-6 text-[16px] text-[#4B5563] text-center">
+          You may also find me on these platforms!
+        </div>
+        <div className="mt-2 flex gap-[8px] justify-center ">
+          <LuGithub className="h-6 w-6" />
+          <FiTwitter className="h-6 w-6" />
+          <FaFigma className="h-6 w-6" />
+        </div>
+      </div>
+      <div className="bg-[#F9FAFB] pt-6 pb-6 flex text-[14px] items-center justify-center">
+        <AiTwotoneCopyright />
+        2023 | Designed and coded with ❤️️ by Sagar Shah
       </div>
     </main>
   );
