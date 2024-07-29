@@ -13,6 +13,7 @@ import { AiOutlineMail } from "react-icons/ai";
 import { PiCopy } from "react-icons/pi";
 import { AiTwotoneCopyright } from "react-icons/ai";
 import { useState } from "react";
+import { IoMdClose } from "react-icons/io";
 
 const navigation = [
   {
@@ -163,7 +164,8 @@ export default function Home() {
   return (
     <main className="container max-w-[1400px] mx-auto ">
       <div className="justify-between bg-[#ffffff] flex  text-center items-center mb-[100px] pt-4 pb-4 pr-20 pl-20 ">
-        <div className="text-[#111827] text-3xl font-semibold ">{"<SS />"}</div>
+        <div className="text-[#111827] text-3xl font-semibold ">
+          {"<SS />"}</div>
         <div className="flex">
           <div className=" gap-6 mr-12 hidden md:flex ">
             {navigation.map((nav) => (
@@ -180,7 +182,7 @@ export default function Home() {
             <button>
               <LuSun className="h-6 w-6" />
             </button>
-            <button className="bg-[#111827] rounded-xl	text-white text-center items-center w-[136px]">
+            <button className="bg-[#111827] rounded-xl	text-white text-center items-center w-[136px] ">
               Download CV
             </button>
           </div>
@@ -200,16 +202,40 @@ export default function Home() {
               open ? "right-0" : "-right-full"
             }`}
           >
-            <div>
-              <div className="flex">
+            <div className="z-1">
+              <div className="flex justify-between items-center mb-9">
                 <div className="text-[#111827] text-3xl font-semibold ">
                   {"<SS />"}
                 </div>
                 <div>
-                  <button onClick={closeMenu} className="hidden">
-                    Close
+                  <button onClick={closeMenu}>
+                    <IoMdClose className="w-6 h-6" />
                   </button>
                 </div>
+              </div>
+              <div>
+                <div className="flex flex-col gap-4 items-start ml-4 mb-9">
+                  {navigation.map((nav) => (
+                    <Link
+                      key={nav.link}
+                      href={nav.link}
+                      className="text-[#4B5563] text-[16px]"
+                    >
+                      {nav.name}{" "}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+              <div className="flex justify-between mr-4 ml-4 mb-4">
+                Switch Theme
+                <button>
+                  <LuSun className="h-6 w-6" />
+                </button>
+              </div>
+              <div>
+                <button className="bg-[#111827] rounded-xl	text-white text-center items-center w-[136px]">
+                  Download CV
+                </button>
               </div>
             </div>
           </div>
